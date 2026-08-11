@@ -18,8 +18,7 @@ app.use(cors({
   credentials: true
 }));
 
-// Middlewares
-app.use(cors());
+
 
 
 app.use('/api/auth',router)
