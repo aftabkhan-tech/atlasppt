@@ -17,6 +17,7 @@ app.use(cors({
   origin: "https://presento-eaei.onrender.com",
   credentials: true
 }));
+app.use(cookieParser());
 
 
 
