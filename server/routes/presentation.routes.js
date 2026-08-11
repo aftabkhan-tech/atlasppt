@@ -2,6 +2,7 @@ import express from "express";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
+import { fileURLToPath } from "url";
 
 import authMiddleware from "../middleware/isAuth.js";
 
@@ -14,7 +15,8 @@ import {
   uploadPresentation,
 } from "../controller/presentation.controller.js";
 
-const uploadPath = path.resolve("uploads");
+const serverDirectory = path.dirname(fileURLToPath(import.meta.url));
+const uploadPath = path.resolve(serverDirectory, "../uploads");
 
 fs.mkdirSync(uploadPath, { recursive: true });
 

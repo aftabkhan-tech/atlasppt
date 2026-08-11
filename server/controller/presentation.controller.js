@@ -3,8 +3,11 @@ import path from "path";
 import Presentation from "../models/presentation.model.js";
 import JSZip from "jszip";
 import { XMLParser } from "fast-xml-parser";
+import { fileURLToPath } from "url";
 
-const uploadDirectory = path.resolve("uploads");
+// Keep uploads in the server directory even if Node is started from the repo root.
+const serverDirectory = path.dirname(fileURLToPath(import.meta.url));
+const uploadDirectory = path.resolve(serverDirectory, "../uploads");
 
 
 // ===============================
