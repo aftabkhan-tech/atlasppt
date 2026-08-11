@@ -13,7 +13,10 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cookieParser());
+app.use(cors({
+  origin: "https://presento-eaei.onrender.com",
+  credentials: true
+}));
 
 // Middlewares
 app.use(cors());
